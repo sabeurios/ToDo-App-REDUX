@@ -17,7 +17,7 @@ const reducer = (state=initialState,action)=>{
       return state.filter(el=>el.id!==action.id)
     }
     if(action.type==='EDIT_INPUT'){
-        return state.filter(el=>el.id!==action.id)
+        return null
       }
     return state
   }
