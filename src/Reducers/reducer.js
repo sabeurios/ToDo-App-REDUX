@@ -7,16 +7,16 @@ const initialState =   {
                         input: "",
                     }
 const reducer = (state=initialState,action)=>{
-    if(action.type==='SET_INPUT'){
+    if(action.type === 'SET_INPUT'){
         return action.value
       }
-    if(action.type==='ADD_INPUT'){
-      return state=[...state,action.value]
+    if(action.type === 'ADD_INPUT'){
+      return state = [...state, action.payload]
     }
-    if(action.type==='REMOVE_INPUT'){
-      return state.filter(el=>el.id!==action.id)
+    if(action.type === 'REMOVE_INPUT'){
+      return state.filter(el=> el.id!==action.payload)
     }
-    if(action.type==='EDIT_INPUT'){
+    if(action.type === 'EDIT_INPUT'){
         return null
       }
     return state
