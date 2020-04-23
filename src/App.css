@@ -1,4 +1,4 @@
-header{
+.header-input{
   background-color: #4696E5;
   display: flex;
   flex-direction: column;
@@ -8,17 +8,13 @@ header{
   font-family: sans-serif;
   margin: 20px;
 }
-header>h1{
+.header-input>h1{
   font-size: 45px;
 }
-.form{
-  width: 105%;
-}
-#inputItem{
+
+.inputItem{
 margin-bottom: 10px;
-width: 98%;
 padding: 1%;
-border-radius: 5px;
 }
 .btn-add{
   background-color: inherit;
@@ -29,7 +25,6 @@ border-radius: 5px;
   padding: 10px 40px;
   border-radius: 10px;
   border-style: solid;
-  position: absolute;
   left: 1110px;
 }
 .main{
@@ -45,12 +40,22 @@ border-radius: 5px;
   border: 1px gray;
   align-items: center;
 }
-.list-items button{
+.btn{
   width: 10%;
   height: 1%;
   margin: 5px;
 }
-.undo{
-  background-color: red;
-  text-decoration: line-through;
+.item{
+  margin: 0px !important;
+    font-size: 28px;
+    padding: 12px;
+}
+.update{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 27px;
+}
+.update>input{
+  width: 276px;
 }

@@ -1,37 +1,41 @@
-import React from "react";
-import {connect} from 'react-redux'
+import React, {useState} from "react";
+import { connect } from "react-redux";
+import {addItem} from "../Actions/action"
 
-class Input extends React.Component {
-  
-  render() { 
-    return (  
-      <div>
-        <input  type="text" placeholder="Enter a Task"
-                onChange={(e)=>{this.props.hundelChange(e.target)}}/>
-        <button onClick={()=>{this.props.add(this.props.input)}}>Add</button>
+const Input = ({addItem}) => {
+  const [input, setInput] = useState("")
+
+  // const addNewItem = () => {
+  //   addItem({
+  //     id:Date.now(),
+  //     text:input,
+  //     isComleted: false,
+  //     isEditable: false
+  //   })
+  // }
+  return (
+      <div className="header-input">
+        <h1>To-Do-App!</h1>    
+        <h4>Add New To-Do</h4>  
+        <input  className= "inputItem form-control"
+                type="text"
+                placeholder="Enter a Task"
+                value={input}
+                onChange={(event)=>setInput(event.target.value)}
+        />
+        <button className="btn-add"
+                onClick={()=>{addItem({ id:Date.now(),
+                                        text:input,
+                                        isComleted: false,
+                                        isEditable:false});
+                              setInput("")}}>
+          Add
+        </button> 
       </div>
     );
-  }
 }
 
-const mapStateToProps=(state)=>{
-  return {
-    input:state.input
-  }
-}
 
-const mapDispatchToProps=(dispatch)=>{
-return {
-  hundelChange:(target)=>{
-    dispatch ({type:'SET_INPUT',value:target.value})
-  },
-  add:(input)=>{
-    let obj={}
-    let id=Date.now()
-    obj={id,input}
-    dispatch ({type:'ADD_INPUT',value:obj})
-  }
-}
-}
-export default connect(mapStateToProps,mapDispatchToProps) (Input); 
 
+
+export default connect(null,{addItem})(Input); // au lieu de mapDispatchToProps, on peut injecter directement la méthode dans connect

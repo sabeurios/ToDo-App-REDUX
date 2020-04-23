@@ -1,27 +1,34 @@
-export const setInput = (payload) => {
+  export const addItem = payload => {
     return {
-        type: "SET_INPUT",
-        payload
+      type: "ADD_ITEM",
+      payload
     }
-}
+  }
 
-export const addInput = (payload) => {
+  export const removeItem = payload => {
     return {
-        type: "ADD_INPUT",
-        payload
+      type: "REMOVE_ITEM",
+      payload
     }
-}
+  }
 
-export const removeInput = (payload) => {
+  export const completeItem = payload => {
     return {
-        type:"REMOVE_INPUT",
-        payload
+      type: "COMPLETE_ITEM",
+      payload
     }
-}
+  }
+  
+  export const editItem = payload => {
+    return {
+      type: "EDIT_ITEM",
+      payload
+    }
+  }
 
-export const editInput = (payload) => {
+  export const updateItem = payload => {
     return {
-        type:"EDIT_INPUT",
+        type: "UPDATE_ITEM",
         payload
     }
-}
+  }
