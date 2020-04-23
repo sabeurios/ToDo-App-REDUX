@@ -18,7 +18,7 @@ const List = ({ items,removeItem,editItem,completeItem,updateItem }) => {
                 <input  className="form-control"
                         type="texte" 
                         placeholder="Enter new task" 
-                        value={updatedItem}
+                        value={!item.isEditable ? updatedItem : item.text}
                         onChange={(event)=>setUpdatedItem(event.target.value)}
                 />
                 <button className="btn btn-success"
